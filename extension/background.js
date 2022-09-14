@@ -25,7 +25,7 @@ function checkUpdateEnabledRulesetsPerformance(resolve) {
         //console.error('Result with ' + disabled_rules_count + ' disabled rules: ' + perf);
         test_context.results[test_context.index].push(perf);
 
-        if (test_context.iteration >= 30) {
+        if (test_context.iteration >= 100) {
           test_context.index += 1;
           new Promise(startTest);
         } else {
@@ -71,7 +71,7 @@ function startTest(resolve) {
 var test_context = {
   index: 0,
   iteration: 0,
-  disabled_rules_count_list: [0, 10, 100, 1000, 10000],
+  disabled_rules_count_list: [0, 10000, 20000, 30000, 40000],
   results: {},
 };
 
