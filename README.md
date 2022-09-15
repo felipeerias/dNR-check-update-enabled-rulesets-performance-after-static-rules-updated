@@ -1,13 +1,14 @@
-# Declarative Net Request: disable individual static rules (Extension to check updateEnabledRulesets performance with disabled rules)
+# Declarative Net Request: disable individual static rules
 
-The extension checks the updateEnabledRulesets() performance by changing the number of disabled rules in a static ruleset.
-- No disabled rule
-- 10000 disabled rules
-- 20000 disabled rules
-- 30000 disabled rules
-- 40000 disabled rules
+## Extension to check `updateEnabledRulesets` performance with disabled rules
 
-It checks the method call performance 100 times for each case, and print the average result to the console.error
+Context: <https://github.com/w3c/webextensions/issues/162>
+
+This extension checks the performance of loading a ruleset when some of its rules are disabled.
+
+Regarding the number of disabled static rules, the extension will test a range that starts at 0 and goes up to 20,000 (every rule in the ruleset).
+
+Each test is run 100 times and the average performance is reported in `console.error`.
 
 ## How to use this extension
 
@@ -16,4 +17,3 @@ It checks the method call performance 100 times for each case, and print the ave
 - Click on `Load unpacked`
 - Select the `extension` folder on this project.
 - The output of the extension will be shown as log messages in the extension's `Errors` section.
-
